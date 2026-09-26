@@ -245,16 +245,18 @@
     line-height: 1.5;
   }
   
-  /* --- МАЛЕНЬКИЕ ФОТО --- */
+  /* --- МАЛЕНЬКИЕ ФОТО (боковые колонки) --- */
   .photo-placeholder-small {
     width: 100%;
-    height: 130px;
     margin: 15px 0;
     overflow: hidden;
     background: var(--beige);
     position: relative;
     filter: grayscale(0.3) contrast(1.1);
     transition: filter 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .photo-placeholder-small:hover {
     filter: grayscale(0) contrast(1.1);
@@ -268,9 +270,9 @@
   }
   .photo-placeholder-small img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
+    object-fit: contain;
   }
 
   /* --- МИГАЮЩИЙ ТЕКСТ --- */
@@ -556,7 +558,7 @@
     margin: 10px auto;
   }
 
-  /* --- ФОТО В ЦЕНТРЕ --- */
+  /* --- ФОТО В ЦЕНТРЕ (Юлия и семья) --- */
   .photo-row {
     display: flex;
     gap: 25px;
@@ -573,7 +575,7 @@
   }
   .photo-placeholder {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: var(--beige);
     border: 1px solid var(--black);
@@ -581,6 +583,9 @@
     margin-bottom: 12px;
     filter: grayscale(0.3) contrast(1.1);
     transition: filter 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .photo-placeholder:hover {
     filter: grayscale(0) contrast(1.1);
@@ -593,10 +598,12 @@
     pointer-events: none;
   }
   .photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     display: block;
+    object-fit: contain;
   }
   .photo-caption {
     font-family: 'Inter', sans-serif;
@@ -842,9 +849,6 @@
     .photo-card {
       min-width: 100%;
     }
-    .photo-placeholder {
-      height: 240px;
-    }
     .photo-caption {
       font-size: 0.75rem;
     }
@@ -883,9 +887,6 @@
     .news-item p {
       font-size: 0.75rem;
     }
-    .photo-placeholder-small {
-      height: 160px;
-    }
     
     .blinking {
       font-size: 0.65rem;
@@ -920,12 +921,6 @@
     }
     .text-block {
       font-size: 0.88rem;
-    }
-    .photo-placeholder {
-      height: 200px;
-    }
-    .photo-placeholder-small {
-      height: 140px;
     }
     main {
       padding: 20px 15px;
