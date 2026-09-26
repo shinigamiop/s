@@ -558,7 +558,7 @@
     margin: 10px auto;
   }
 
-  /* --- ФОТО В ЦЕНТРЕ (Юлия и семья) --- */
+  /* --- ФОТО В ЦЕНТРЕ --- */
   .photo-row {
     display: flex;
     gap: 25px;
@@ -639,6 +639,135 @@
     font-weight: 700;
     font-size: 1.2rem;
     color: var(--red);
+  }
+
+  /* ========================================= */
+  /* ====== БЛОК: ОПРОС МНЕНИЯ =============== */
+  /* ========================================= */
+  .poll-box {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 30px 25px;
+    margin: 40px 0;
+    box-shadow: 6px 6px 0 var(--black);
+  }
+  .poll-box h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .poll-box .poll-question {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--grey);
+    font-style: italic;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(26,26,26,0.3);
+  }
+  .poll-item {
+    margin-bottom: 18px;
+  }
+  .poll-item-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+    gap: 15px;
+  }
+  .poll-item-label .pct {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--red);
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .poll-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(26,26,26,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  .poll-bar-fill {
+    height: 100%;
+    background: var(--red);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 1.2s ease-out;
+  }
+  .poll-bar-fill.black {
+    background: var(--black);
+  }
+  .poll-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: var(--grey);
+    font-style: italic;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(26,26,26,0.15);
+    text-align: center;
+  }
+
+  /* ========================================= */
+  /* ====== БЛОК: ПИСЬМА ТРУДЯЩИХСЯ =========== */
+  /* ========================================= */
+  .letters-box {
+    background: transparent;
+    margin: 40px 0;
+  }
+  .letter-item {
+    background: var(--cream);
+    border-left: 4px solid var(--red);
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  .letter-item::before {
+    content: '«';
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: var(--red);
+    opacity: 0.15;
+    line-height: 1;
+  }
+  .letter-author {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .letter-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .letter-signature {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--grey);
+    margin-top: 10px;
+    text-align: right;
+    font-style: normal;
   }
 
   /* --- ПОДВАЛ --- */
@@ -865,6 +994,37 @@
       font-size: 1rem;
     }
     
+    .poll-box {
+      padding: 20px 18px;
+      margin: 25px 0;
+      box-shadow: 4px 4px 0 var(--black);
+    }
+    .poll-box h4 {
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+    .poll-item-label {
+      font-size: 0.82rem;
+      gap: 10px;
+    }
+    .poll-item-label .pct {
+      font-size: 0.95rem;
+    }
+    
+    .letter-item {
+      padding: 15px 18px;
+      margin-bottom: 12px;
+    }
+    .letter-author {
+      font-size: 0.72rem;
+    }
+    .letter-text {
+      font-size: 0.85rem;
+    }
+    .letter-signature {
+      font-size: 0.7rem;
+    }
+    
     .sidebar {
       display: block;
     }
@@ -1076,6 +1236,51 @@
       <p>Слава Юбиляру! Слава Товарищу Епрынцевой! Ура! Ура! Ура!</p>
     </div>
 
+    <!-- БЛОК: ПИСЬМА ТРУДЯЩИХСЯ -->
+    <div class="section-label fade-in">Письма трудящихся</div>
+    
+    <div class="letters-box fade-in">
+      <div class="letter-item">
+        <div class="letter-author">От кота Скута</div>
+        <div class="letter-text">
+          Уважаемая редакция! Довожу до вашего сведения, что гражданка Епрынцева своевременно и в полном объёме исполняет обязанности по выдаче корма, чесанию за ушком и уборке лотка. Претензий не имею. Требую продлить её полномочия бессрочно.
+        </div>
+        <div class="letter-signature">— Скут, 8 лет, беспартийный</div>
+      </div>
+      
+      <div class="letter-item">
+        <div class="letter-author">От домового Кузьмы</div>
+        <div class="letter-text">
+          Настоящим подтверждаю: в доме порядок, тепло и уют. Гражданка Епрынцева исправно платит за отопление, не забывает ставить блюдце с молоком и вовремя меняет шторы. Прошу наградить орденом и премировать сгущёнкой.
+        </div>
+        <div class="letter-signature">— Кузьма, старожил дома, инкогнито</div>
+      </div>
+
+      <div class="letter-item">
+        <div class="letter-author">От чайника Tuviо</div>
+        <div class="letter-text">
+          Докладываю: кипячу воду строго по команде, парю воздух в нужный момент, не подгораю. Гражданка Епрынцева обращается со мной бережно, накипь чистит по графику. Прошу поощрить её новым набором для чая и, в идеале, кружкой с надписью «Хозяйка года».
+        </div>
+        <div class="letter-signature">— Tuviо, электрический, 2 года службы</div>
+      </div>
+      
+      <div class="letter-item">
+        <div class="letter-author">От фикуса на подоконнике</div>
+        <div class="letter-text">
+          Прошу занести в протокол: поливают меня регулярно, листья протирают, на солнце не забывают выставлять. Расту, зеленею, цвету. Спасибо товарищу Епрынцевой за чуткое руководство.
+        </div>
+        <div class="letter-signature">— Фикус, 12 лет, вечнозелёный</div>
+      </div>
+
+      <div class="letter-item">
+        <div class="letter-author">От Яндекс.Станции</div>
+        <div class="letter-text">
+          Докладываю: гражданка Епрынцева — исправный и постоянный пользователь. По вечерам слушает аудиокниги. Вкусы у неё своеобразные — что-то про миры, где реальность оказывается не тем, чем кажется. Прошу продлить подписку и признать её почётным слушателем Алисы.
+        </div>
+        <div class="letter-signature">— Алиса, умная колонка, стаж 3 года</div>
+      </div>
+    </div>
+
     <div class="photo-row">
       <div class="photo-card fade-in">
         <div class="photo-placeholder">
@@ -1102,6 +1307,46 @@
       <div class="text-block">Обеспечить гражданку Епрынцеву пожизненным запасом здоровья, счастья и финансов.</div>
       <div class="text-block">Освободить от всех бытовых проблем на ближайшие 100 лет.</div>
       <div class="text-block">Продлить действие лицензии на оптимизм бессрочно.</div>
+    </div>
+
+    <!-- БЛОК: ОПРОС ОБЩЕСТВЕННОГО МНЕНИЯ -->
+    <div class="section-label fade-in">Опрос общественного мнения</div>
+    
+    <div class="poll-box fade-in">
+      <h4>Вопрос дня</h4>
+      <p class="poll-question">«Что вы думаете о гражданке Епрынцевой и её вкладе в мировую стабильность?»</p>
+      
+      <div class="poll-item">
+        <div class="poll-item-label">
+          <span>Одобряю и всячески поддерживаю</span>
+          <span class="pct">97%</span>
+        </div>
+        <div class="poll-bar">
+          <div class="poll-bar-fill" style="width: 97%;"></div>
+        </div>
+      </div>
+      
+      <div class="poll-item">
+        <div class="poll-item-label">
+          <span>Воздерживаюсь (боюсь её взгляда)</span>
+          <span class="pct">2%</span>
+        </div>
+        <div class="poll-bar">
+          <div class="poll-bar-fill black" style="width: 2%;"></div>
+        </div>
+      </div>
+      
+      <div class="poll-item">
+        <div class="poll-item-label">
+          <span>Против (но это не точно)</span>
+          <span class="pct">1%</span>
+        </div>
+        <div class="poll-bar">
+          <div class="poll-bar-fill black" style="width: 1%;"></div>
+        </div>
+      </div>
+      
+      <p class="poll-note">Опрос проводился среди домочадцев, родственников, котов и домового. Погрешность — в пределах разумного. Явка — 146%.</p>
     </div>
 
   </main>
