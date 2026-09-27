@@ -476,107 +476,111 @@
   .fade-in-delay-1 { animation-delay: 0.1s; }
   .fade-in-delay-2 { animation-delay: 0.2s; }
   .fade-in-delay-3 { animation-delay: 0.3s; }
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 15, 15, 0.95);
-  z-index: 9999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  cursor: zoom-out;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.lightbox.active {
-  display: flex;
-  opacity: 1;
-}
-.lightbox img {
-  max-width: 95%;
-  max-height: 95%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  box-shadow: 0 0 60px rgba(211, 47, 47, 0.4);
-  border: 3px solid var(--cream);
-  cursor: zoom-out;
-  animation: lightboxZoom 0.3s ease-out;
-}
-@keyframes lightboxZoom {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--cream);
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s, transform 0.2s;
-  user-select: none;
-}
-.lightbox-close:hover {
-  color: var(--red);
-  transform: rotate(90deg);
-}
-.lightbox-hint {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--cream);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  opacity: 0.6;
-  pointer-events: none;
-  text-align: center;
-}
 
-/* Курсор-лупа на всех картинках */
-.photo-placeholder img,
-.photo-placeholder-small img,
-.article-photo img {
-  cursor: zoom-in;
-  transition: transform 0.3s ease;
-}
-.photo-placeholder:hover img,
-.photo-placeholder-small:hover img,
-.article-photo:hover img {
-  transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
+  /* ========================================= */
+  /* ====== ЛАЙТБОКС (просмотр фото) ========== */
+  /* ========================================= */
   .lightbox {
-    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.95);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox.active {
+    display: flex;
+    opacity: 1;
   }
   .lightbox img {
-    max-width: 100%;
-    max-height: 90%;
-    border-width: 2px;
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 0 60px rgba(211, 47, 47, 0.4);
+    border: 3px solid var(--cream);
+    cursor: zoom-out;
+    animation: lightboxZoom 0.3s ease-out;
+  }
+  @keyframes lightboxZoom {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
   }
   .lightbox-close {
-    font-size: 2.2rem;
-    top: 15px;
-    right: 15px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cream);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+    user-select: none;
+  }
+  .lightbox-close:hover {
+    color: var(--red);
+    transform: rotate(90deg);
   }
   .lightbox-hint {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    bottom: 15px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.6;
+    pointer-events: none;
+    text-align: center;
   }
-}
+
+  /* Курсор-лупа на всех картинках */
+  .photo-placeholder img,
+  .photo-placeholder-small img,
+  .article-photo img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+  .photo-placeholder:hover img,
+  .photo-placeholder-small:hover img,
+  .article-photo:hover img {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    .lightbox {
+      padding: 10px;
+    }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90%;
+      border-width: 2px;
+    }
+    .lightbox-close {
+      font-size: 2.2rem;
+      top: 15px;
+      right: 15px;
+    }
+    .lightbox-hint {
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      bottom: 15px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -776,7 +780,7 @@
     <div class="section-label fade-in">Постановили</div>
     
     <div class="decree-list fade-in">
-      <div class="text-block">Считать день 28 сентября всенародным праздником.</div>
+      <div class="text-block">Считать день [Дата] всенародным праздником.</div>
       <div class="text-block">Обеспечить гражданку Епрынцеву пожизненным запасом здоровья, счастья и финансов.</div>
       <div class="text-block">Освободить от всех бытовых проблем на ближайшие 100 лет.</div>
       <div class="text-block">Продлить действие лицензии на оптимизм бессрочно.</div>
@@ -866,11 +870,20 @@
   </div>
 </footer>
 
+<!-- ЛАЙТБОКС ДЛЯ ПРОСМОТРА ФОТО -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">×</span>
+  <img src="" alt="Просмотр" id="lightboxImg">
+  <div class="lightbox-hint">Нажмите в любом месте, чтобы закрыть</div>
+</div>
+
 <script>
+  // Клик по печати в свидетельстве
   document.querySelector('.patent-box').addEventListener('click', function() {
     alert('Документ заверен печатью! Отпечаток губной помады прилагается. Подписано всеми единомышленниками.');
   });
 
+  // Плавное появление элементов при скролле
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -883,47 +896,47 @@
     el.style.animationPlayState = 'paused';
     observer.observe(el);
   });
-</script>
-(function() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxClose = document.getElementById('lightboxClose');
 
-  // Все картинки, на которые можно кликнуть
-  const images = document.querySelectorAll(
-    '.photo-placeholder img, .photo-placeholder-small img, .article-photo img'
-  );
+  // =========================================
+  // ====== ЛАЙТБОКС (просмотр фото) =========
+  // =========================================
+  (function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
 
-  images.forEach(img => {
-    img.addEventListener('click', function(e) {
-      e.stopPropagation();
-      lightboxImg.src = this.src;
-      lightboxImg.alt = this.alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+    // Все картинки, на которые можно кликнуть
+    const images = document.querySelectorAll(
+      '.photo-placeholder img, .photo-placeholder-small img, .article-photo img'
+    );
+
+    images.forEach(img => {
+      img.addEventListener('click', function(e) {
+        e.stopPropagation();
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
     });
-  });
 
-  // Закрытие по клику на любой области лайтбокса
-  lightbox.addEventListener('click', function() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => { lightboxImg.src = ''; }, 300);
-  });
-
-  // Закрытие по Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    // Закрытие по клику на любой области лайтбокса
+    lightbox.addEventListener('click', function() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
       setTimeout(() => { lightboxImg.src = ''; }, 300);
-    }
-  });
-})();
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+      }
+    });
+  })();
+</script>
+
 </body>
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightboxClose">×</span>
-  <img src="" alt="Просмотр" id="lightboxImg">
-  <div class="lightbox-hint">Нажмите в любом месте, чтобы закрыть</div>
-</div>
 </html>
