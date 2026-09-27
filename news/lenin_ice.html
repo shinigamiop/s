@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#d32f2f">
+<title>Ледяной Ленин в Антарктиде | ХОЧУ В СССР!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Unbounded:wght@700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #d32f2f; --black: #0f0f0f; --cream: #f0e6d2;
+    --cream-light: #f8f2e4; --beige: #e8dcc0; --ink: #1a1a1a; --grey: #6b6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(26,26,26,0.03) 40px, rgba(26,26,26,0.03) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(26,26,26,0.03) 40px, rgba(26,26,26,0.03) 41px);
+    font-family: 'Inter', sans-serif; color: var(--ink);
+    line-height: 1.7; padding: 0; overflow-x: hidden;
+  }
+  .article-header {
+    max-width: 900px; margin: 0 auto; padding: 25px 20px 0;
+    border-bottom: 5px solid var(--red);
+  }
+  .article-header-top {
+    display: flex; justify-content: space-between;
+    font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--grey);
+    padding-bottom: 10px; border-bottom: 1px solid var(--black); margin-bottom: 15px;
+  }
+  .article-logo {
+    font-family: 'Unbounded', 'Oswald', sans-serif; font-weight: 900;
+    font-size: clamp(1.8rem, 6vw, 3rem); color: var(--black);
+    line-height: 0.95; letter-spacing: -2px; text-transform: uppercase;
+    text-align: center; margin-bottom: 20px;
+  }
+  .article-logo .red { color: var(--red); }
+  .article-container {
+    max-width: 900px; margin: 0 auto; padding: 30px 20px 50px;
+  }
+  .back-link {
+    display: inline-block; font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem; font-weight: 700; color: var(--red);
+    text-transform: uppercase; letter-spacing: 2px; text-decoration: none;
+    margin-bottom: 25px; padding: 8px 16px;
+    border: 2px solid var(--red); transition: all 0.2s;
+  }
+  .back-link:hover { background: var(--red); color: var(--cream); }
+  .back-link::before { content: '← '; margin-right: 5px; }
+  .article-title {
+    font-family: 'Unbounded', 'Oswald', sans-serif; font-weight: 900;
+    font-size: clamp(1.5rem, 4vw, 2.4rem); color: var(--black);
+    text-transform: uppercase; line-height: 1.1; letter-spacing: -1px;
+    margin-bottom: 15px; padding-bottom: 20px;
+    border-bottom: 3px solid var(--black); position: relative;
+  }
+  .article-title::before {
+    content: '★'; position: absolute; top: 0; right: 0;
+    font-size: 2rem; color: var(--red); line-height: 1;
+  }
+  .article-meta {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600;
+    color: var(--grey); text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 30px;
+  }
+  .article-meta span::before {
+    content: '● '; color: var(--red); margin-right: 4px;
+  }
+  .article-photo {
+    width: 100%; background: var(--beige); border: 2px solid var(--black);
+    margin: 25px 0; padding: 10px; box-shadow: 6px 6px 0 var(--black);
+  }
+  .article-photo img { width: 100%; height: auto; display: block; }
+  .article-photo-caption {
+    font-family: 'Inter', sans-serif; font-size: 0.8rem;
+    font-style: italic; color: var(--grey); margin-top: 10px;
+    padding-left: 10px; border-left: 3px solid var(--red);
+  }
+  .article-text p {
+    font-family: 'Inter', sans-serif; font-size: 1.05rem;
+    line-height: 1.75; color: var(--ink); margin-bottom: 20px;
+    text-align: justify;
+  }
+  .article-text p:first-of-type::first-letter {
+    font-family: 'Unbounded', sans-serif; font-size: 4rem; font-weight: 900;
+    color: var(--red); float: left; line-height: 0.85; padding: 5px 15px 0 0;
+  }
+  .article-text strong { color: var(--red); font-weight: 700; }
+  .article-quote {
+    background: var(--cream-light); border-left: 6px solid var(--red);
+    padding: 20px 25px; margin: 30px 0;
+    font-family: 'Inter', sans-serif; font-size: 1.05rem;
+    font-style: italic; color: var(--ink); box-shadow: 4px 4px 0 var(--black);
+  }
+  .article-quote::before {
+    content: '«'; font-family: 'Oswald', sans-serif; font-size: 3rem;
+    color: var(--red); line-height: 0; display: block; margin-bottom: 15px;
+  }
+  .article-signature {
+    margin-top: 40px; padding-top: 20px;
+    border-top: 2px solid var(--black); text-align: right;
+    font-family: 'Oswald', sans-serif; font-size: 0.85rem;
+    font-weight: 600; color: var(--grey);
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  .article-signature strong { color: var(--red); }
+  .back-link-bottom {
+    display: block; text-align: center; margin: 40px auto 0;
+    max-width: 300px; font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem; font-weight: 700; color: var(--cream);
+    background: var(--black); text-transform: uppercase;
+    letter-spacing: 2px; text-decoration: none; padding: 15px 25px;
+    border: 2px solid var(--black); transition: all 0.2s;
+  }
+  .back-link-bottom:hover { background: var(--red); border-color: var(--red); }
+  footer {
+    background: var(--black); color: var(--cream); padding: 15px 0;
+    margin-top: 40px; border-top: 6px solid var(--red); overflow: hidden;
+  }
+  .marquee {
+    white-space: nowrap; overflow: hidden; box-sizing: border-box;
+    animation: marquee 30s linear infinite;
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  @media (max-width: 768px) {
+    .article-header { padding: 15px 15px 0; border-bottom-width: 4px; }
+    .article-header-top { flex-direction: column; gap: 3px; font-size: 10px; }
+    .article-container { padding: 20px 15px 40px; }
+    .article-title { font-size: 1.3rem; }
+    .article-title::before { font-size: 1.5rem; }
+    .article-meta { gap: 10px; font-size: 0.65rem; }
+    .article-text p { font-size: 0.95rem; text-align: left; }
+    .article-text p:first-of-type::first-letter { font-size: 3rem; }
+    .article-quote { padding: 15px 18px; font-size: 0.95rem; }
+    .back-link { font-size: 0.75rem; padding: 6px 12px; }
+    .back-link-bottom { padding: 12px 20px; font-size: 0.8rem; }
+    .marquee { font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="article-header">
+  <div class="article-header-top">
+    <span>Орган всемирного совета единомышленников</span>
+    <span>Выпуск № 1 · 2026</span>
+  </div>
+  <div class="article-logo">ХОЧУ В <span class="red">СССР!</span></div>
+</div>
+
+<div class="article-container">
+
+  <a href="../index.html" class="back-link">Вернуться на главную</a>
+
+  <h1 class="article-title">В Антарктиде открыт памятник Ленину изо льда</h1>
+
+  <div class="article-meta">
+    <span>Отдел сенсаций</span>
+    <span>Выпуск № 1 · 2026</span>
+    <span>2 минуты чтения</span>
+  </div>
+
+  <div class="article-photo">
+    <img src="../images/lenin_ice.png" alt="Ледяной Ленин и пингвины">
+    <div class="article-photo-caption">Фото: экспедиция «Восток». Прислано по спутнику.</div>
+  </div>
+
+  <div class="article-text">
+    <p>Научная экспедиция на станции «Восток» сделала неожиданное открытие — в самом центре ледяного континента возвышается статуя Владимира Ильича Ленина в натуральную величину, вырезанная из прозрачного льда неизвестным скульптором.</p>
+
+    <p>Внутри ледяной статуи, по словам очевидцев, застыла красная звезда, которая медленно пульсирует в такт с биением сердца планеты.</p>
+
+    <div class="article-quote">
+      Это невероятно. Пингвины собрались вокруг статуи и проголосовали единогласно. За — 47 пингвинов, против — 0. Воздержался один морж.
+      <br><br>
+      — <strong>полярник Сидоров</strong>
+    </div>
+
+    <p>Памятник активно тает из-за глобального потепления, но, по заверениям учёных, обещал вернуться к 2027 году. В более суровом климате и с новым ледяным постаментом.</p>
+
+    <p>Местные пингвины уже подали заявку на гражданство. Ожидается, что комиссия рассмотрит её в ближайшее время.</p>
+  </div>
+
+  <div class="article-signature">
+    <strong>Редакция газеты «ХОЧУ В СССР!»</strong><br>
+    Специально для товарища Епрынцевой
+  </div>
+
+  <a href="../index.html" class="back-link-bottom">← Вернуться на главную</a>
+
+</div>
+
+<footer>
+  <div class="marquee">
+    ★ ТОВАРИЩИ! ПОЗДРАВЛЯЕМ ГРАЖДАНКУ ЕПРЫНЦЕВУ! ★ ЖЕЛАЕМ СТОЙКОСТИ В БОРЬБЕ С ЧЕЛОВЕЧЕСКИМ ФАКТОРОМ! ★ СЛАВА ЮБИЛЯРУ! ★
+  </div>
+</footer>
+
+</body>
+</html>
